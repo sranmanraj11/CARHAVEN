@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTOHAVEN | Surrey's Premier Muscle & Performance Auto Destination</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Montserrat & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        havenRed: '#E50914',
+                        havenRedDark: '#B20710',
+                        havenDark: '#0A0A0C',
+                        havenCard: '#121216',
+                        havenBorder: '#22222A'
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0A0C;
+            color: #E2E8F0;
+        }
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0C;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #22222A;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E50914;
+        }
+        .gradient-overlay {
+            background: linear-gradient(180deg, rgba(10,10,12,0.4) 0%, rgba(10,10,12,0.95) 100%);
+        }
+        .red-glow:hover {
+            box-shadow: 0 0 25px rgba(229, 9, 20, 0.4);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-havenRed selection:text-white">
+
+    <!-- Top Info Bar -->
+    <div class="bg-black/80 border-b border-havenBorder text-xs py-2 px-4 text-gray-400">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-6">
+                <span><i class="fa-solid fa-location-dot text-havenRed mr-2"></i>120th St, Surrey, BC V3V 4E2</span>
+                <span class="hidden sm:inline"><i class="fa-solid fa-clock text-havenRed mr-2"></i>Mon - Sat: 9:00 AM - 8:00 PM</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="tel:6045550199" class="hover:text-white transition-colors"><i class="fa-solid fa-phone text-havenRed mr-1"></i> (604) 555-0199</a>
+                <span class="text-havenBorder">|</span>
+                <a href="#finance" class="text-havenRed hover:underline font-semibold">Instant Approval</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="sticky top-0 z-50 bg-havenDark/90 backdrop-blur-md border-b border-havenBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 rounded-full border-2 border-havenRed bg-black flex items-center justify-center font-heading font-black text-xl italic text-white shadow-lg group-hover:scale-105 transition-transform">
+                        AH
+                    </div>
+                    <div>
+                        <div class="font-heading font-black text-2xl tracking-wider text-white flex items-center gap-1">
+                            AUTO<span class="text-havenRed">HAVEN</span>
+                        </div>
+                        <div class="text-[9px] uppercase tracking-widest text-gray-400 -mt-1 font-semibold">Surrey Performance Cars</div>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden lg:flex items-center space-x-8 font-semibold text-sm tracking-wide uppercase">
+                    <a href="#home" class="text-white hover:text-havenRed transition-colors">Home</a>
+                    <a href="#inventory" class="text-gray-300 hover:text-havenRed transition-colors">Inventory</a>
+                    <a href="#trade-in" class="text-gray-300 hover:text-havenRed transition-colors">Trade / Sell</a>
+                    <a href="#finance" class="text-gray-300 hover:text-havenRed transition-colors">Financing</a>
+                    <a href="#reviews" class="text-gray-300 hover:text-havenRed transition-colors">Reviews</a>
+                    <a href="#contact" class="text-gray-300 hover:text-havenRed transition-colors">Contact</a>
+                </nav>
+
+                <!-- CTA Button & Mobile Menu Toggle -->
+                <div class="flex items-center space-x-4">
+                    <a href="#inventory" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 border-2 border-havenRed text-sm font-heading font-bold rounded-md text-white bg-havenRed hover:bg-transparent transition-all duration-300 uppercase tracking-wider red-glow">
+                        Browse Cars
+                    </a>
+                    <button id="mobile-menu-btn" class="lg:hidden text-gray-300 hover:text-white p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-havenCard border-b border-havenBorder px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="block py-2 text-white font-semibold uppercase hover:text-havenRed">Home</a>
+            <a href="#inventory" class="block py-2 text-gray-300 font-semibold uppercase hover:text-havenRed">Inventory</a>
+            <a href="#trade-in" class="block py-2 text-gray-300 font-semibold uppercase hover:text-havenRed">Trade / Sell</a>
+            <a href="#finance" class="block py-2 text-gray-300 font-semibold uppercase hover:text-havenRed">Financing</a>
+            <a href="#reviews" class="block py-2 text-gray-300 font-semibold uppercase hover:text-havenRed">Reviews</a>
+            <a href="#contact" class="block py-2 text-gray-300 font-semibold uppercase hover:text-havenRed">Contact</a>
+            <a href="#inventory" class="block text-center w-full py-3 bg-havenRed text-white font-bold rounded-md uppercase">View Inventory</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-black">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1920&q=80" alt="Muscle Car Background" class="w-full h-full object-cover object-center opacity-40 scale-105 animate-pulse duration-[10000ms]">
+            <div class="absolute inset-0 bg-gradient-to-r from-havenDark via-havenDark/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-havenDark via-transparent to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 bg-havenRed/20 border border-havenRed/50 rounded-full text-havenRed text-xs font-bold uppercase tracking-widest mb-6">
+                    <span class="w-2 h-2 rounded-full bg-havenRed animate-ping"></span>
+                    <span>Surrey's #1 Muscle & Luxury Hub</span>
+                </div>
+                <h1 class="font-heading text-4xl sm:text-6xl lg:text-7xl font-black italic tracking-tight text-white uppercase leading-none mb-6">
+                    DOMINATE <span class="text-transparent bg-clip-text bg-gradient-to-r from-havenRed via-red-500 to-white">THE ROAD.</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl font-light leading-relaxed">
+                    Surrey’s premier destination for SRT Challengers, Chargers, Mustangs, and high-performance luxury vehicles. Unmatched inventory, aggressive pricing, and instant approval.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#inventory" class="px-8 py-4 bg-havenRed hover:bg-havenRedDark text-white font-heading font-extrabold rounded-md uppercase tracking-wider text-center transition-all duration-300 red-glow flex items-center justify-center gap-3">
+                        <span>Explore Inventory</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#finance" class="px-8 py-4 border-2 border-white/20 hover:border-white bg-white/5 hover:bg-white/10 text-white font-heading font-extrabold rounded-md uppercase tracking-wider text-center transition-all duration-300">
+                        Get Pre-Approved
+                    </a>
+                </div>
+
+                <!-- Feature Highlights -->
+                <div class="grid grid-cols-3 gap-6 mt-16 pt-8 border-t border-white/10">
+                    <div>
+                        <div class="font-heading font-black text-2xl text-white sm:text-3xl">100+</div>
+                        <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Cars In Stock</div>
+                    </div>
+                    <div>
+                        <div class="font-heading font-black text-2xl text-white sm:text-3xl">99%</div>
+                        <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Approval Rate</div>
+                    </div>
+                    <div>
+                        <div class="font-heading font-black text-2xl text-white sm:text-3xl">4.9 ★</div>
+                        <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Surrey Reviews</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inventory Filter & Display Section -->
+    <section id="inventory" class="py-20 bg-havenDark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-havenBorder pb-6">
+                <div>
+                    <span class="text-havenRed font-bold uppercase tracking-widest text-xs">Featured Fleet</span>
+                    <h2 class="font-heading text-3xl sm:text-5xl font-black text-white uppercase italic tracking-wide mt-1">
+                        CURRENT <span class="text-havenRed">INVENTORY</span>
+                    </h2>
+                </div>
+                <p class="text-gray-400 text-sm mt-2 md:mt-0 max-w-md">
+                    All vehicles pass a 150-point inspection and come with complete CarFax history reports.
+                </p>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="bg-havenCard p-6 rounded-xl border border-havenBorder mb-10 shadow-2xl">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- Search Input -->
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gray-400 mb-2">Search Vehicle</label>
+                        <div class="relative">
+                            <input type="text" id="search-input" placeholder="e.g. Challenger, Hellcat..." class="w-full bg-havenDark border border-havenBorder rounded-md py-2.5 px-4 text-white placeholder-gray-500 focus:outline-none focus:border-havenRed">
+                            <i class="fa-solid fa-magnifying-glass absolute right-3 top-3 text-gray-500"></i>
+                        </div>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gray-400 mb-2">Body Style</label>
+                        <select id="body-filter" class="w-full bg-havenDark border border-havenBorder rounded-md py-2.5 px-4 text-white focus:outline-none focus:border-havenRed">
+                            <option value="all">All Body Styles</option>
+                            <option value="Coupe">Coupe / Muscle</option>
+                            <option value="Sedan">Sedan / Performance</option>
+                            <option value="SUV">SUV / Truck</option>
+                        </select>
+                    </div>
+
+                    <!-- Make Filter -->
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gray-400 mb-2">Make</label>
+                        <select id="make-filter" class="w-full bg-havenDark border border-havenBorder rounded-md py-2.5 px-4 text-white focus:outline-none focus:border-havenRed">
+                            <option value="all">All Makes</option>
+                            <option value="Dodge">Dodge</option>
+                            <option value="Ford">Ford</option>
+                            <option value="Chevrolet">Chevrolet</option>
+                            <option value="BMW">BMW</option>
+                        </select>
+                    </div>
+
+                    <!-- Sort Filter -->
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gray-400 mb-2">Sort By</label>
+                        <select id="sort-filter" class="w-full bg-havenDark border border-havenBorder rounded-md py-2.5 px-4 text-white focus:outline-none focus:border-havenRed">
+                            <option value="featured">Featured First</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="year-new">Year: Newest</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventory Grid -->
+            <div id="inventory-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Vehicle cards will be dynamically rendered via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Trade-In Estimator Section -->
+    <section id="trade-in" class="py-20 bg-havenCard border-y border-havenBorder relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-havenRed font-bold uppercase tracking-widest text-xs">Instant Valuation</span>
+                    <h2 class="font-heading text-3xl sm:text-5xl font-black text-white uppercase italic tracking-wide mt-1 mb-6">
+                        SELL OR <span class="text-havenRed">TRADE YOUR CAR</span>
+                    </h2>
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                        Looking to upgrade to a SRT Challenger or performance coupe? Get a top-dollar competitive cash offer or trade value for your vehicle in under 60 seconds.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-havenRed/10 border border-havenRed flex items-center justify-center text-havenRed">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Instant Market-Based Quote</h4>
+                                <p class="text-gray-400 text-sm">Real-time Canadian market valuation algorithms.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-havenRed/10 border border-havenRed flex items-center justify-center text-havenRed">
+                                <i class="fa-solid fa-money-bill-wave"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Same-Day Cash Payment</h4>
+                                <p class="text-gray-400 text-sm">We buy cars outright even if you don't buy ours.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calculator Form -->
+                <div class="bg-havenDark p-8 rounded-2xl border border-havenBorder shadow-2xl">
+                    <h3 class="font-heading text-xl font-bold text-white uppercase mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-calculator text-havenRed"></i>
+                        Value Estimator
+                    </h3>
+                    <form id="trade-form" class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Year</label>
+                                <input type="number" id="trade-year" required placeholder="e.g. 2019" class="w-full bg-havenCard border border-havenBorder rounded-md py-2.5 px-3 text-white focus:outline-none focus:border-havenRed">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Make</label>
+                                <input type="text" id="trade-make" required placeholder="e.g. Dodge" class="w-full bg-havenCard border border-havenBorder rounded-md py-2.5 px-3 text-white focus:outline-none focus:border-havenRed">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Model</label>
+                                <input type="text" id="trade-model" required placeholder="e.g. Challenger" class="w-full bg-havenCard border border-havenBorder rounded-md py-2.5 px-3 text-white focus:outline-none focus:border-havenRed">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Mileage (KM)</label>
+                                <input type="number" id="trade-mileage" required placeholder="e.g. 45000" class="w-full bg-havenCard border border-havenBorder rounded-md py-2.5 px-3 text-white focus:outline-none focus:border-havenRed">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Condition</label>
+                            <select id="trade-condition" class="w-full bg-havenCard border border-havenBorder rounded-md py-2.5 px-3 text-white focus:outline-none focus:border-havenRed">
+                                <option value="excellent">Excellent (Like New, Low KM)</option>
+                                <option value="good" selected>Good (Normal Wear, Well Maintained)</option>
+                                <option value="fair">Fair (Minor Scratches/Dents)</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-havenRed hover:bg-havenRedDark text-white font-heading font-extrabold uppercase rounded-md tracking-wider transition-all duration-300 red-glow mt-4">
+                            Calculate Value Now
+                        </button>
+                    </form>
+
+                    <!-- Trade Output Result -->
+                    <div id="trade-result" class="hidden mt-6 p-6 bg-black/60 border border-havenRed/40 rounded-xl text-center">
+                        <span class="text-xs uppercase tracking-widest text-gray-400 block mb-1">Estimated Trade Value</span>
+                        <div id="trade-estimate" class="font-heading text-3xl font-black text-havenRed">$0</div>
+                        <p class="text-xs text-gray-400 mt-2">Final offer confirmed upon physical inspection at Surrey showroom.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financing Application Section -->
+    <section id="finance" class="py-20 bg-havenDark relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-havenRed font-bold uppercase tracking-widest text-xs">Easy Approval Process</span>
+                <h2 class="font-heading text-3xl sm:text-5xl font-black text-white uppercase italic tracking-wide mt-1">
+                    FAST TRACK <span class="text-havenRed">FINANCING</span>
+                </h2>
+                <p class="text-gray-400 mt-3 max-w-2xl mx-auto">
+                    Good credit, bad credit, or new to Canada? We work with major prime and sub-prime lenders in BC to get you behind the wheel today.
+                </p>
+            </div>
+
+            <div class="bg-havenCard border border-havenBorder rounded-2xl p-6 sm:p-10 shadow-2xl">
+                <form id="finance-form" class="space-y-6">
+                    <!-- Step Indicator -->
+                    <div class="grid grid-cols-3 gap-2 mb-8 text-center border-b border-havenBorder pb-6">
+                        <div class="text-havenRed font-bold text-xs uppercase tracking-wider">1. Contact Info</div>
+                        <div class="text-gray-400 font-bold text-xs uppercase tracking-wider">2. Credit & Income</div>
+                        <div class="text-gray-400 font-bold text-xs uppercase tracking-wider">3. Vehicle Goal</div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Full Name *</label>
+                            <input type="text" required placeholder="John Doe" class="w-full bg-havenDark border border-havenBorder rounded-md py-3 px-4 text-white focus:outline-none focus:border-havenRed">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Phone Number *</label>
+                            <input type="tel" required placeholder="(604) 555-0199" class="w-full bg-havenDark border border-havenBorder rounded-md py-3 px-4 text-white focus:outline-none focus:border-havenRed">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Email Address *</label>
+                            <input type="email" required placeholder="john@example.com" class="w-full bg-havenDark border border-havenBorder rounded-md py-3 px-4 text-white focus:outline-none focus:border-havenRed">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Estimated Credit Score</label>
+                            <select class="w-full bg-havenDark border border-havenBorder rounded-md py-3 px-4 text-white focus:outline-none focus:border-havenRed">
+                                <option>Excellent (750+)</option>
+                                <option selected>Good (650 - 749)</option>
+                                <option>Fair (550 - 649)</option>
+                                <option>Rebuilding / New to Canada</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Monthly Gross Income</label>
+                            <select class="w-full bg-havenDark border border-havenBorder rounded-md py-3 px-4 text-white focus:outline-none focus:border-havenRed">
+                                <option>$3,000 - $4,500 / mo</option>
+                                <option selected>$4,500 - $6,500 / mo</option>
+                                <option>$6,500 - $9,000 / mo</option>
+                                <option>$9,000+ / mo</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Desired Down Payment</label>
+                            <input type="text" placeholder="$2,000" class="w-full bg-havenDark border border-havenBorder rounded-md py-3 px-4 text-white focus:outline-none focus:border-havenRed">
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="submit" class="w-full py-4 bg-havenRed hover:bg-havenRedDark text-white font-heading font-extrabold uppercase rounded-md tracking-wider transition-all duration-300 red-glow text-lg">
+                            Submit Confidential Pre-Approval Request
+                        </button>
+                    </div>
+
+                    <div id="finance-msg" class="hidden p-4 bg-emerald-900/30 border border-emerald-500 text-emerald-400 rounded-md text-center text-sm font-semibold">
+                        Application Received! A financial specialist from AutoHaven Surrey will contact you within 15 minutes.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials Section -->
+    <section id="reviews" class="py-20 bg-havenCard border-t border-havenBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-havenRed font-bold uppercase tracking-widest text-xs">Surrey Driver Stories</span>
+                <h2 class="font-heading text-3xl sm:text-5xl font-black text-white uppercase italic tracking-wide mt-1">
+                    DRIVEN BY <span class="text-havenRed">SATISFACTION</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-havenDark p-8 rounded-xl border border-havenBorder relative">
+                    <div class="flex text-amber-400 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 italic text-sm mb-6 leading-relaxed">
+                        "Got my 2023 Challenger Hellcat through AutoHaven. The process was super clean, no hidden dealership fees, and the approval was done the same afternoon. Best performance dealer in BC!"
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-havenRed/20 font-bold text-havenRed flex items-center justify-center">
+                            MS
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Marcus S.</h4>
+                            <span class="text-xs text-gray-500">Surrey, BC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-havenDark p-8 rounded-xl border border-havenBorder relative">
+                    <div class="flex text-amber-400 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 italic text-sm mb-6 leading-relaxed">
+                        "Traded in my old Mustang GT and received way more than expected for trade-in value. Drove off with a Dodge Charger Scat Pack. These guys know muscle cars inside out."
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-havenRed/20 font-bold text-havenRed flex items-center justify-center">
+                            AR
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Amanpreet R.</h4>
+                            <span class="text-xs text-gray-500">Delta, BC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-havenDark p-8 rounded-xl border border-havenBorder relative">
+                    <div class="flex text-amber-400 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 italic text-sm mb-6 leading-relaxed">
+                        "First time buyer with rebuilding credit. Their team didn't judge and secured an incredible rate for my BMW 4 Series. Exceptional service from start to finish."
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-havenRed/20 font-bold text-havenRed flex items-center justify-center">
+                            DK
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">David K.</h4>
+                            <span class="text-xs text-gray-500">Langley, BC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Vehicle Details & Test Drive -->
+    <div id="vehicle-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-havenCard border border-havenBorder rounded-2xl max-w-2xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-content">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact & Footer Section -->
+    <footer id="contact" class="bg-black border-t border-havenBorder pt-16 pb-8 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Brand Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-full border border-havenRed bg-havenDark flex items-center justify-center font-heading font-black text-lg italic text-white">
+                            AH
+                        </div>
+                        <span class="font-heading font-black text-xl tracking-wider text-white">AUTO<span class="text-havenRed">HAVEN</span></span>
+                    </div>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                        Surrey's headquarters for performance vehicles, muscle coupes, and luxury auto finance. Uncompromising quality and aggressive value.
+                    </p>
+                    <div class="flex space-x-4 text-gray-400">
+                        <a href="#" class="hover:text-havenRed transition-colors"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                        <a href="#" class="hover:text-havenRed transition-colors"><i class="fa-brands fa-instagram text-lg"></i></a>
+                        <a href="#" class="hover:text-havenRed transition-colors"><i class="fa-brands fa-youtube text-lg"></i></a>
+                        <a href="#" class="hover:text-havenRed transition-colors"><i class="fa-brands fa-tiktok text-lg"></i></a>
+                    </div>
+                </div>
+
+                <!-- Hours -->
+                <div>
+                    <h4 class="font-heading font-bold text-white uppercase text-base mb-4 border-l-2 border-havenRed pl-3">Showroom Hours</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li class="flex justify-between py-1 border-b border-white/5"><span>Monday - Friday</span> <span class="text-white font-medium">9:00 AM - 8:00 PM</span></li>
+                        <li class="flex justify-between py-1 border-b border-white/5"><span>Saturday</span> <span class="text-white font-medium">9:00 AM - 6:00 PM</span></li>
+                        <li class="flex justify-between py-1"><span>Sunday</span> <span class="text-havenRed font-medium">Appointment Only</span></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Details -->
+                <div>
+                    <h4 class="font-heading font-bold text-white uppercase text-base mb-4 border-l-2 border-havenRed pl-3">Visit Surrey HQ</h4>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-location-dot text-havenRed mt-1"></i>
+                            <span>120th Street & 84th Ave, Surrey, BC V3V 4E2</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-phone text-havenRed"></i>
+                            <a href="tel:6045550199" class="hover:text-white">(604) 555-0199</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-envelope text-havenRed"></i>
+                            <a href="mailto:sales@autohavensurrey.ca" class="hover:text-white">sales@autohavensurrey.ca</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Map Frame Placeholder -->
+                <div>
+                    <h4 class="font-heading font-bold text-white uppercase text-base mb-4 border-l-2 border-havenRed pl-3">Location Map</h4>
+                    <div class="w-full h-32 bg-havenCard border border-havenBorder rounded-md overflow-hidden relative flex items-center justify-center">
+                        <div class="text-center p-2">
+                            <i class="fa-solid fa-map-location-dot text-2xl text-havenRed mb-1"></i>
+                            <div class="text-[10px] text-gray-300 font-bold uppercase">Surrey, BC Showroom</div>
+                            <span class="text-[9px] text-gray-500">Click to open directions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-havenBorder pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+                <div>&copy; 2026 AUTOHAVEN Surrey Car Company. All Rights Reserved.</div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                    <a href="#" class="hover:underline">Terms of Service</a>
+                    <a href="#" class="hover:underline">CarFax Verification</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactivity Logic -->
+    <script>
+        // Vehicle Dataset (Dodge Challenger / Muscle / High Performance focus)
+        const inventoryData = [
+            {
+                id: 1,
+                year: 2023,
+                make: "Dodge",
+                model: "Challenger SRT Hellcat Widebody",
+                body: "Coupe",
+                price: 89900,
+                mileage: "12,400 km",
+                transmission: "8-Speed Automatic",
+                engine: "6.2L Supercharged HEMI V8",
+                hp: "717 HP",
+                image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80",
+                featured: true
+            },
+            {
+                id: 2,
+                year: 2022,
+                make: "Dodge",
+                model: "Charger Scat Pack 392",
+                body: "Sedan",
+                price: 58500,
+                mileage: "28,100 km",
+                transmission: "8-Speed Automatic",
+                engine: "6.4L V8 HEMI",
+                hp: "485 HP",
+                image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80",
+                featured: true
+            },
+            {
+                id: 3,
+                year: 2021,
+                make: "Ford",
+                model: "Mustang GT Premium Performance",
+                body: "Coupe",
+                price: 46800,
+                mileage: "34,000 km",
+                transmission: "6-Speed Manual",
+                engine: "5.0L Coyote V8",
+                hp: "460 HP",
+                image: "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=800&q=80",
+                featured: true
+            },
+            {
+                id: 4,
+                year: 2022,
+                make: "Chevrolet",
+                model: "Camaro ZL1 1LE",
+                body: "Coupe",
+                price: 84900,
+                mileage: "18,500 km",
+                transmission: "10-Speed Automatic",
+                engine: "6.2L Supercharged LT4 V8",
+                hp: "650 HP",
+                image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80",
+                featured: false
+            },
+            {
+                id: 5,
+                year: 2023,
+                make: "Dodge",
+                model: "Challenger R/T Scat Pack Swinger",
+                body: "Coupe",
+                price: 66900,
+                mileage: "8,900 km",
+                transmission: "8-Speed Automatic",
+                engine: "6.4L V8 HEMI",
+                hp: "485 HP",
+                image: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80",
+                featured: false
+            },
+            {
+                id: 6,
+                year: 2021,
+                make: "BMW",
+                model: "M4 Competition Coupe",
+                body: "Coupe",
+                price: 81900,
+                mileage: "24,000 km",
+                transmission: "8-Speed M Steptronic",
+                engine: "3.0L Twin-Turbo Inline-6",
+                hp: "503 HP",
+                image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80",
+                featured: false
+            }
+        ];
+
+        // Render Inventory Function
+        function renderInventory(items) {
+            const grid = document.getElementById('inventory-grid');
+            grid.innerHTML = '';
+
+            if(items.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-12 text-center text-gray-500">
+                        <i class="fa-solid fa-car-tunnel text-4xl mb-3 text-havenRed"></i>
+                        <p class="text-lg">No vehicles found matching your criteria.</p>
+                        <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-havenCard border border-havenBorder rounded-md text-white text-xs uppercase font-bold">Reset Filters</button>
+                    </div>
+                `;
+                return;
+            }
+
+            items.forEach(car => {
+                const estPayment = Math.round((car.price * 1.05) / 72); // Estimate monthly over 72 mos
+                const card = document.createElement('div');
+                card.className = "bg-havenCard border border-havenBorder rounded-xl overflow-hidden hover:border-havenRed/60 transition-all duration-300 flex flex-col justify-between group";
+                card.innerHTML = `
+                    <div>
+                        <!-- Image Container -->
+                        <div class="relative h-56 overflow-hidden bg-black">
+                            <img src="${car.image}" alt="${car.year} ${car.make} ${car.model}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 left-3 bg-black/80 backdrop-blur-md px-3 py-1 rounded-md text-xs font-bold text-white border border-havenBorder">
+                                ${car.year}
+                            </div>
+                            <div class="absolute top-3 right-3 bg-havenRed px-3 py-1 rounded-md text-xs font-black text-white uppercase tracking-wider shadow-lg">
+                                ${car.hp}
+                            </div>
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="p-6">
+                            <div class="text-xs text-havenRed font-bold uppercase tracking-widest mb-1">${car.make}</div>
+                            <h3 class="font-heading font-black text-xl text-white uppercase leading-snug mb-4">${car.model}</h3>
+
+                            <!-- Specs Grid -->
+                            <div class="grid grid-cols-2 gap-3 py-3 border-y border-havenBorder text-xs text-gray-400 mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-gauge-high text-havenRed"></i>
+                                    <span>${car.mileage}</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-gear text-havenRed"></i>
+                                    <span>${car.transmission}</span>
+                                </div>
+                                <div class="flex items-center space-x-2 col-span-2">
+                                    <i class="fa-solid fa-microchip text-havenRed"></i>
+                                    <span class="truncate">${car.engine}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Price & CTA -->
+                    <div class="px-6 pb-6 pt-0">
+                        <div class="flex items-baseline justify-between mb-4">
+                            <div>
+                                <span class="text-[10px] text-gray-500 uppercase block">Price</span>
+                                <span class="font-heading font-black text-2xl text-white">$${car.price.toLocaleString()}</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-[10px] text-gray-500 uppercase block">Est. Financing</span>
+                                <span class="text-sm font-bold text-havenRed">$${estPayment}<span class="text-[10px] text-gray-400">/mo</span></span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="openModal(${car.id})" class="w-full py-2.5 bg-havenDark hover:bg-white hover:text-black text-white border border-havenBorder font-heading font-bold text-xs uppercase rounded-md transition-colors">
+                                Details
+                            </button>
+                            <a href="#finance" class="w-full text-center py-2.5 bg-havenRed hover:bg-havenRedDark text-white font-heading font-bold text-xs uppercase rounded-md transition-colors">
+                                Apply
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Filtering & Sorting Logic
+        function filterInventory() {
+            const search = document.getElementById('search-input').value.toLowerCase();
+            const body = document.getElementById('body-filter').value;
+            const make = document.getElementById('make-filter').value;
+            const sort = document.getElementById('sort-filter').value;
+
+            let filtered = inventoryData.filter(car => {
+                const matchesSearch = (car.make + ' ' + car.model + ' ' + car.year).toLowerCase().includes(search);
+                const matchesBody = body === 'all' || car.body === body;
+                const matchesMake = make === 'all' || car.make === make;
+                return matchesSearch && matchesBody && matchesMake;
+            });
+
+            if (sort === 'price-low') {
+                filtered.sort((a, b) => a.price - b.price);
+            } else if (sort === 'price-high') {
+                filtered.sort((a, b) => b.price - a.price);
+            } else if (sort === 'year-new') {
+                filtered.sort((a, b) => b.year - a.year);
+            }
+
+            renderInventory(filtered);
+        }
+
+        function resetFilters() {
+            document.getElementById('search-input').value = '';
+            document.getElementById('body-filter').value = 'all';
+            document.getElementById('make-filter').value = 'all';
+            document.getElementById('sort-filter').value = 'featured';
+            renderInventory(inventoryData);
+        }
+
+        // Event Listeners for Filters
+        document.getElementById('search-input').addEventListener('input', filterInventory);
+        document.getElementById('body-filter').addEventListener('change', filterInventory);
+        document.getElementById('make-filter').addEventListener('change', filterInventory);
+        document.getElementById('sort-filter').addEventListener('change', filterInventory);
+
+        // Trade-In Form Event Handler
+        document.getElementById('trade-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const year = parseInt(document.getElementById('trade-year').value);
+            const mileage = parseInt(document.getElementById('trade-mileage').value);
+            const condition = document.getElementById('trade-condition').value;
+
+            // Mock valuation calculation
+            let baseVal = 35000;
+            if(year < 2018) baseVal -= 8000;
+            if(mileage > 60000) baseVal -= 5000;
+            if(condition === 'excellent') baseVal += 4000;
+            if(condition === 'fair') baseVal -= 4000;
+
+            const finalEstimate = Math.max(8000, baseVal);
+            
+            document.getElementById('trade-estimate').innerText = `$${finalEstimate.toLocaleString()} CAD`;
+            document.getElementById('trade-result').classList.remove('hidden');
+        });
+
+        // Financing Application Event Handler
+        document.getElementById('finance-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('finance-msg').classList.remove('hidden');
+            this.reset();
+        });
+
+        // Modal Logic
+        function openModal(id) {
+            const car = inventoryData.find(item => item.id === id);
+            if(!car) return;
+
+            const modalContent = document.getElementById('modal-content');
+            modalContent.innerHTML = `
+                <div class="relative h-64 rounded-xl overflow-hidden mb-6">
+                    <img src="${car.image}" alt="${car.model}" class="w-full h-full object-cover">
+                </div>
+                <span class="text-xs text-havenRed font-bold uppercase tracking-widest">${car.year} ${car.make}</span>
+                <h2 class="font-heading text-2xl font-black text-white uppercase mb-4">${car.model}</h2>
+                <div class="grid grid-cols-2 gap-4 text-sm text-gray-300 border-y border-havenBorder py-4 mb-6">
+                    <div><strong>Mileage:</strong> ${car.mileage}</div>
+                    <div><strong>Transmission:</strong> ${car.transmission}</div>
+                    <div><strong>Engine:</strong> ${car.engine}</div>
+                    <div><strong>Horsepower:</strong> ${car.hp}</div>
+                </div>
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <span class="text-xs text-gray-500 uppercase block">Vehicle Price</span>
+                        <span class="font-heading text-3xl font-black text-white">$${car.price.toLocaleString()}</span>
+                    </div>
+                    <a href="#finance" onclick="closeModalFunc()" class="px-6 py-3 bg-havenRed hover:bg-havenRedDark text-white font-heading font-extrabold uppercase rounded-md red-glow">
+                        Schedule Test Drive
+                    </a>
+                </div>
+            `;
+            document.getElementById('vehicle-modal').classList.remove('hidden');
+        }
+
+        function closeModalFunc() {
+            document.getElementById('vehicle-modal').classList.add('hidden');
+        }
+
+        document.getElementById('close-modal').addEventListener('click', closeModalFunc);
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Initial Load
+        window.onload = function() {
+            renderInventory(inventoryData);
+        };
+    </script>
+</body>
+</html>
